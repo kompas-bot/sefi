@@ -1,97 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Malam yang Tenang...</title>
+    <title>For You 🌸</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+            background: #FFFFFF;
+            font-family: 'Helvetica', 'Arial', sans-serif;
             text-align: center;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #f0f0f0;
+            height: 100vh;
+            margin: 0;
+            color: #555;
         }
-        .container {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
-            backdrop-filter: blur(5px);
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            max-width: 80%;
+            border: 1px solid #F0F0F0;
         }
         h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            color: #ffd3b6;
+            color: #FF6B6B;
+            font-weight: 300;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            opacity: 0.9;
+            line-height: 1.8;
+            margin: 15px 0;
         }
-        .hint {
-            font-style: italic;
+        button {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
             margin-top: 20px;
-            opacity: 0.7;
-            font-size: 0.9em;
-            border-top: 1px dashed #ffd3b6;
-            padding-top: 10px;
+            transition: all 0.3s;
         }
-        .moon {
-            font-size: 1.5em;
-            animation: glow 2s infinite alternate;
+        button:hover {
+            background: #FF8E8E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
         }
-        @keyframes glow {
-            from { text-shadow: 0 0 5px #fff; }
-            to { text-shadow: 0 0 15px #ffd3b6; }
+        .hidden {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s;
+            margin-top: 30px;
         }
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        .show {
+            display: block;
+            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <!-- Efek bintang -->
-    <div class="stars" id="stars"></div>
-
-    <div class="container">
-        <h1>Selamat Malam, <span id="nama">Teman</span> <span class="moon">🌙</span></h1>
-        <p>Semoga tidurmu nyenyak dan penuh mimpi indah...</p>
-        <p>Aku ingin jadi bintang yang menemanimu sampai pagi.</p>
+    <div class="card">
+        <h1>Selamat Pagi...</h1>
+        <p>Aku mau mengakui sesuatu.</p>
+        <p>Kemarin, aku tidak bermaksud meninggalkanmu sendiri.</p>
         
-        <div class="hint">
-            <p>P.S. Kalau ada yang mengganggu tidurmu, ingat aku selalu ada.</p>
+        <button onclick="showMessage()">Buka Pesan Khusus</button>
+        
+        <div id="hiddenMessage" class="hidden">
+            <p>💌</p>
+            <p>"Maafkan aku yang sudah ketiduran saat kamu butuh ditemani."</p>
+            <p>Aku berjanji akan lebih perhatian. Maukah kamu memberi aku kesempatan lagi?</p>
+            <p style="font-size: 13px; color: #999;">- Maaf yaa ✌️🫣 -</p>
         </div>
     </div>
 
     <script>
-        // Ganti nama dengan nama aslinya
-        const nama = prompt("Siapa nama kamu? (Default: Teman)") || "Teman";
-        document.getElementById("nama").textContent = nama;
-
-        // Efek bintang dinamis
-        const stars = document.getElementById('stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.style.position = 'absolute';
-            star.style.width = `${Math.random() * 3}px`;
-            star.style.height = star.style.width;
-            star.style.backgroundColor = 'white';
-            star.style.borderRadius = '50%';
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.opacity = Math.random();
-            stars.appendChild(star);
+        function showMessage() {
+            document.getElementById('hiddenMessage').classList.add('show');
+            // Optional: Tambahkan efek ketik
+            typeWriter();
+        }
+        
+        function typeWriter() {
+            const text = '"Maafkan aku yang sudah ketiduran saat kamu butuh ditemani."';
+            let i = 0;
+            const speed = 50;
+            const elem = document.querySelector('#hiddenMessage p:nth-child(2)');
+            
+            elem.innerHTML = '';
+            function typing() {
+                if (i < text.length) {
+                    elem.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, speed);
+                }
+            }
+            typing();
         }
     </script>
 </body>
