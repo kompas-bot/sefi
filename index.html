@@ -1,103 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>For You 🌸</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ☀️💖</title>
     <style>
         body {
-            background: #FFFFFF;
-            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #fff9e6;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            color: #555;
+            padding: 10px;
+            color: #333;
         }
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            max-width: 80%;
-            border: 1px solid #F0F0F0;
+        .container {
+            max-width: 100%;
+            margin: 10px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(255, 165, 0, 0.1);
         }
         h1 {
-            color: #FF6B6B;
-            font-weight: 300;
-            margin-bottom: 20px;
+            color: #ff8c00;
+            font-size: 24px; /* Larger text for mobile */
+            margin-bottom: 15px;
         }
         p {
-            line-height: 1.8;
-            margin: 15px 0;
-        }
-        button {
-            background: #FF6B6B;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
+            line-height: 1.6;
             font-size: 16px;
-            cursor: pointer;
+            margin-bottom: 15px;
+            text-align: left; /* Better readability */
+            padding: 0 5px;
+        }
+        .heart {
+            color: #ff6b6b;
+            font-size: 20px;
+        }
+        .signature {
+            font-style: italic;
             margin-top: 20px;
-            transition: all 0.3s;
+            text-align: center;
         }
-        button:hover {
-            background: #FF8E8E;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-        }
-        .hidden {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s;
-            margin-top: 30px;
-        }
-        .show {
+        .gif {
+            width: 90%; /* Responsive GIF */
+            max-width: 300px;
+            margin: 15px auto;
+            border-radius: 10px;
             display: block;
-            opacity: 1;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Selamat Pagi...</h1>
-        <p>Aku mau mengakui sesuatu.</p>
-        <p>Kemarin, aku tidak bermaksud meninggalkanmu sendiri.</p>
+    <div class="container">
+        <h1>Good Morning, Sayangku ☀️</h1>
+        <p>Selamat pagi, Wanita tercintaku! Aku mau kasih tau kamu...</p>
+        <p><strong>I'm so grateful to wake up to you!</strong> Aku suka semua tentang kamu. Aku suka banget pas kamu bangunin aku dengan suara lembutmu, suka pas kamu ingetin aku buat sarapan, dan selalu bikin hari-hariku lebih cerah. Pokoknya, <span class="heart">aku suka semuanya tentang kamu</span>.</p>
         
-        <button onclick="showMessage()">Buka Pesan Khusus</button>
+        <p>Kamu gaperlu tanya lagi apa aku sayang sama kamu, karena jawabannya selalu <strong>"Iyyaa, aku sayang banget sama kamu!"</strong>. Kamu orang yang aku butuhin di pagi hari dan bakal jadi orang yang aku butuhin setiap hari. Aku bener-bener sayang sama kamu, aku gamau kehilangan kamu.</p>
         
-        <div id="hiddenMessage" class="hidden">
-            <p>💌</p>
-            <p>"Maafkan aku yang sudah ketiduran saat kamu butuh ditemani."</p>
-            <p>Aku berjanji akan lebih perhatian. Maukah kamu memberi aku kesempatan lagi?</p>
-            <p style="font-size: 13px; color: #999;">- Maaf yaa ✌️🫣 -</p>
-        </div>
+        <p>Maafin aku kalau semalam kita berantem atau aku bikin kamu kesel. Tapi, apapun yang terjadi, <strong>jangan pergi ya?</strong> Aku tau aku kadang overthinking, tapi itu karena aku gapernah sesayang ini sama orang lain. Aku bersyukur banget punya kamu, meski kadang aku bikin kamu kecewa.</p>
+        
+        <p>Makasih udah selalu sabar, udah bikin aku bahagia dengan hal-hal kecil. Aku beruntung banget ketemu kamu. Aku gamau kamu pergi—aku gak akan ikhlas. Aku janji bakal ada terus buat kamu. Kalo hari ini kamu ada masalah, cerita sama aku ya? Jangan pernah ngerasa sendirian, karena <strong>aku di sini untuk kamu</strong>.</p>
+        
+        <p>I love you, and you’re always my favorite sunshine. Semoga hari ini menyenangkan untuk kamu! Let’s make today amazing together. 💞</p>
+        
+        <p class="signature">- Yang selalu sayang kamu, lebih dari matahari terbit.</p>
+        
+        <!-- Optional: Add a cute GIF (uncomment and replace link) -->
+        <!-- <img src="https://media.giphy.com/media/sunrise-gif-link" class="gif" alt="Good Morning GIF"> -->
     </div>
-
-    <script>
-        function showMessage() {
-            document.getElementById('hiddenMessage').classList.add('show');
-            // Optional: Tambahkan efek ketik
-            typeWriter();
-        }
-        
-        function typeWriter() {
-            const text = '"Maafkan aku yang sudah ketiduran saat kamu butuh ditemani."';
-            let i = 0;
-            const speed = 50;
-            const elem = document.querySelector('#hiddenMessage p:nth-child(2)');
-            
-            elem.innerHTML = '';
-            function typing() {
-                if (i < text.length) {
-                    elem.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typing, speed);
-                }
-            }
-            typing();
-        }
-    </script>
 </body>
 </html>
