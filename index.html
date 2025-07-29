@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💤 Surat Cinta 💤</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive;
             background: linear-gradient(45deg, #ffcce6, #f2e6ff);
             text-align: center;
-            padding: 20px;
+            padding: 15px;
+            margin: 0;
+            min-height: 100vh;
+            background-size: 200% 200%;
             animation: gradientBG 10s infinite;
         }
         @keyframes gradientBG {
@@ -17,47 +21,49 @@
         }
         .card {
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 10px 20px rgba(255,105,180,0.3);
-            padding: 30px;
-            max-width: 500px;
-            margin: 20px auto;
-            border: 5px dashed #ff9ec6;
-            transform: rotate(-2deg);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+            padding: 20px;
+            width: 90%;
+            max-width: 350px;
+            margin: 10px auto;
+            border: 4px dashed #ff9ec6;
+            transform: rotate(-1deg);
             animation: float 3s ease-in-out infinite;
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
         }
         h1 {
             color: #ff4d88;
-            font-size: 32px;
-            text-shadow: 2px 2px 0px #ffe6f2;
+            font-size: 24px;
+            text-shadow: 1px 1px 0px #ffe6f2;
+            margin: 10px 0;
         }
         .cat {
-            font-size: 60px;
-            margin: 10px;
+            font-size: 40px;
+            margin: 5px;
             display: inline-block;
             animation: bounce 0.5s infinite alternate;
         }
         @keyframes bounce {
-            to { transform: translateY(-15px); }
+            to { transform: translateY(-10px); }
+        }
+        p {
+            font-size: 14px;
+            margin: 8px 0;
         }
         .btn {
             background: #ff6b9e;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 14px;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
             transition: all 0.3s;
-        }
-        .btn:hover {
-            background: #ff4785;
-            transform: scale(1.1);
         }
         .hidden {
             display: none;
@@ -66,6 +72,11 @@
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
+        }
+        .heart-rain {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
         }
     </style>
 </head>
@@ -86,7 +97,7 @@
             <p>🎀 <strong>O.M</strong> Aku minta maaf telat ngucapin,<br> 
             tapi aku janji besok jadi yang pertama <br>
             yang bilang <span style="color:#ff4d88">"Selamat Pagi!"</span></p>
-            <div style="font-size:40px">😘💕</div>
+            <div style="font-size:30px">😘💕</div>
         </div>
     </div>
 
@@ -96,26 +107,28 @@
             document.querySelector('.btn').textContent = 'I Love You!';
             document.querySelector('.cat').textContent = '🐾';
             
-            // Animasi confetti sederhana
-            for(let i=0; i<30; i++) {
+            // Animasi confetti yang dioptimalkan untuk mobile
+            for(let i=0; i<20; i++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
-                    heart.innerHTML = '💖';
-                    heart.style.position = 'absolute';
+                    heart.className = 'heart-rain';
+                    heart.innerHTML = ['💖','💘','💝','💗','💓'][Math.floor(Math.random()*5)];
                     heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.animation = `fall ${Math.random()*2+1}s linear`;
+                    heart.style.top = '-20px';
+                    heart.style.fontSize = (Math.random() * 16 + 12) + 'px';
+                    heart.style.animation = `fall ${Math.random()*1.5+0.5}s linear forwards`;
                     document.body.appendChild(heart);
                     
-                    setTimeout(() => heart.remove(), 3000);
-                }, i * 100);
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 150);
             }
         }
         
-        // Tambah efek ketik nama
-        const nama = "Pacarku Tersayang";
+        // Efek ketik nama yang lebih ringan
+        const nama = "Untuk Kamu";
         let i = 0;
         const typing = setInterval(() => {
-            document.title = "💤 " + nama.substring(0, i++);
+            document.title = "💌 " + nama.substring(0, i++);
             if (i > nama.length) clearInterval(typing);
         }, 200);
     </script>
