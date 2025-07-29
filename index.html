@@ -1,74 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ☀️💖</title>
+    <title>💤 Surat Cinta 💤</title>
     <style>
         body {
-            background-color: #fff9e6;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Comic Sans MS', cursive;
+            background: linear-gradient(45deg, #ffcce6, #f2e6ff);
             text-align: center;
-            margin: 0;
-            padding: 10px;
-            color: #333;
-        }
-        .container {
-            max-width: 100%;
-            margin: 10px auto;
-            background-color: white;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 10px rgba(255, 165, 0, 0.1);
+            animation: gradientBG 10s infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card {
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(255,105,180,0.3);
+            padding: 30px;
+            max-width: 500px;
+            margin: 20px auto;
+            border: 5px dashed #ff9ec6;
+            transform: rotate(-2deg);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
         }
         h1 {
-            color: #ff8c00;
-            font-size: 24px; /* Larger text for mobile */
-            margin-bottom: 15px;
+            color: #ff4d88;
+            font-size: 32px;
+            text-shadow: 2px 2px 0px #ffe6f2;
         }
-        p {
-            line-height: 1.6;
+        .cat {
+            font-size: 60px;
+            margin: 10px;
+            display: inline-block;
+            animation: bounce 0.5s infinite alternate;
+        }
+        @keyframes bounce {
+            to { transform: translateY(-15px); }
+        }
+        .btn {
+            background: #ff6b9e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
             font-size: 16px;
-            margin-bottom: 15px;
-            text-align: left; /* Better readability */
-            padding: 0 5px;
-        }
-        .heart {
-            color: #ff6b6b;
-            font-size: 20px;
-        }
-        .signature {
-            font-style: italic;
+            cursor: pointer;
             margin-top: 20px;
-            text-align: center;
+            transition: all 0.3s;
         }
-        .gif {
-            width: 90%; /* Responsive GIF */
-            max-width: 300px;
-            margin: 15px auto;
-            border-radius: 10px;
-            display: block;
+        .btn:hover {
+            background: #ff4785;
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Good Morning, Sayangku ☀️</h1>
-        <p>Selamat pagi, Wanita tercintaku! Aku mau kasih tau kamu...</p>
-        <p><strong>I'm so grateful to wake up to you!</strong> Aku suka semua tentang kamu. Aku suka banget pas kamu bangunin aku dengan suara lembutmu, suka pas kamu ingetin aku buat sarapan, dan selalu bikin hari-hariku lebih cerah. Pokoknya, <span class="heart">aku suka semuanya tentang kamu</span>.</p>
+    <div class="card">
+        <div class="cat">🐱</div>
+        <h1>💌 SURAT CINTA 💌</h1>
+        <p><em>"Hai Sayangku yang Cantik!"</em></p>
         
-        <p>Kamu gaperlu tanya lagi apa aku sayang sama kamu, karena jawabannya selalu <strong>"Iyyaa, aku sayang banget sama kamu!"</strong>. Kamu orang yang aku butuhin setiap hari. Aku bener-bener sayang sama kamu, aku gamau kehilangan kamu.</p>
+        <p>📜 Dengan ini kuberi izin resmi untuk:<br>
+        - Tidur nyenyak semalaman<br>
+        - Mimpi tentang aku (wajib!)<br>
+        - Bangun dengan mood 100% 💯</p>
         
-        <p>Maafin aku kalau semalam kita berantem atau aku bikin kamu kesel. Tapi, apapun yang terjadi, <strong>jangan pergi ya?</strong> Aku tau aku kadang overthinking, tapi itu karena aku gapernah sesayang ini sama orang lain. Aku bersyukur banget punya kamu, meski kadang aku bikin kamu kecewa.</p>
+        <button class="btn" onclick="showMessage()">Klik Kejutan!</button>
         
-        <p>Makasih udah selalu sabar, udah bikin aku bahagia dengan hal-hal kecil. Aku beruntung banget ketemu kamu. Aku gamau kamu pergi—aku gak akan ikhlas. Aku janji bakal ada terus buat kamu. Kalo hari ini kamu ada masalah, cerita sama aku ya? Jangan pernah ngerasa sendirian, karena <strong>aku di sini untuk kamu</strong>.</p>
-        
-        <p>I love you, and you’re always my favorite sunshine. Semoga hari ini menyenangkan untuk kamu! Let’s make today amazing together. 💞</p>
-        
-        <p class="signature">- Yang selalu sayang kamu, lebih dari matahari terbit.</p>
-        
-        <!-- Optional: Add a cute GIF (uncomment and replace link) -->
-        <!-- <img src="https://media.giphy.com/media/sunrise-gif-link" class="gif" alt="Good Morning GIF"> -->
+        <div id="hidden-message" class="hidden">
+            <p>🎀 <strong>O.M</strong> Aku minta maaf telat ngucapin,<br> 
+            tapi aku janji besok jadi yang pertama <br>
+            yang bilang <span style="color:#ff4d88">"Selamat Pagi!"</span></p>
+            <div style="font-size:40px">😘💕</div>
+        </div>
     </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('hidden-message').style.display = 'block';
+            document.querySelector('.btn').textContent = 'I Love You!';
+            document.querySelector('.cat').textContent = '🐾';
+            
+            // Animasi confetti sederhana
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💖';
+                    heart.style.position = 'absolute';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animation = `fall ${Math.random()*2+1}s linear`;
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 3000);
+                }, i * 100);
+            }
+        }
+        
+        // Tambah efek ketik nama
+        const nama = "Pacarku Tersayang";
+        let i = 0;
+        const typing = setInterval(() => {
+            document.title = "💤 " + nama.substring(0, i++);
+            if (i > nama.length) clearInterval(typing);
+        }, 200);
+    </script>
 </body>
 </html>
