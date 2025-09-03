@@ -3,250 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan Pagi Untukmu</title>
+    <title>Untuk Sayangku ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .container {
-            max-width: 500px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            text-align: center;
-        }
-        
-        .header {
-            background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-            padding: 30px 20px;
-            position: relative;
-        }
-        
-        .header h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #fff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        }
-        
-        .header p {
-            color: #fff;
-            font-size: 16px;
-        }
-        
-        .heart {
-            color: #ff6b6b;
-            font-size: 24px;
-            margin: 0 5px;
-            display: inline-block;
-            animation: pulse 1.5s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
-        }
-        
-        .content {
-            padding: 30px;
-        }
-        
-        .message {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 25px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .message p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-            font-size: 17px;
-            text-align: left;
-        }
-        
-        .message:after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #f8f9fa;
-        }
-        
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin: 25px 0;
-        }
-        
-        .feature {
-            text-align: center;
-            width: 30%;
-        }
-        
-        .feature i {
-            font-size: 28px;
-            color: #f5576c;
-            margin-bottom: 10px;
-        }
-        
-        .feature p {
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .cta-button {
-            background: linear-gradient(120deg, #f5576c 0%, #f093fb 100%);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 50px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 20px 0;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(245, 87, 108, 0.6);
-        }
-        
-        .footer {
-            background: #f8f9fa;
-            padding: 15px;
-            font-size: 14px;
-            color: #888;
-        }
-        
-        .sun {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: #FFD700;
-            border-radius: 50%;
-            box-shadow: 0 0 20px #FFD700;
-            animation: rise 2s ease-out;
-        }
-        
-        @keyframes rise {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        .flowers {
-            position: absolute;
-            bottom: 10px;
-            left: 20px;
-            font-size: 24px;
-            color: #ff6b6b;
-        }
-        
-        @media (max-width: 500px) {
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .feature {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="sun"></div>
-            <div class="flowers">
-                <i class="fas fa-spa"></i>
-                <i class="fas fa-leaf"></i>
-            </div>
-            <h1>Selamat Pagi, Sayangku <span class="heart">❤</span></h1>
-            <p>Semoga harimu menyenangkan!</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">OCHi<span>CHEPI</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#messages">Messages</a></li>
+            </ul>
         </div>
-        
-        <div class="content">
-            <div class="message">
-                <p>Pagi yang cerah untuk pagi yang cerah dalam hidupku. Semoga kamu bangun dengan senyuman dan energi positif untuk hari ini.</p>
-                <p>Aku bersyukur bisa memulai hari dengan memikirkanmu. Kamu adalah sumber kebahagiaanku.</p>
-                <p>Semoga hari ini membawa banyak kebahagiaan dan kesuksesan untukmu. Aku akan selalu mendukungmu!</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Untuk <span id="typing-text"></span><span class="cursor">|</span></h1>
+            <p>
+                Setiap detik bersamamu adalah halaman terindah dalam buku hidupku.<br>
+                Kamu adalah mimpi yang selalu ingin aku wujudkan.<br>
+                Bersamamu, dunia terasa lebih indah dan penuh warna.
+            </p>
+            <button class="cta-button" onclick="scrollToSection('story')">Our Story <i class="fas fa-heart"></i></button>
+        </div>
+        <div class="hero-image">
+            <div class="floating-hearts"></div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story">
+        <h2>Our <span>Story</span></h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Pertama Chattingan</h3>
+                    <p class="timeline-date">10 Juli 2025 - 19:25</p>
+                    <p>Takdir mempertemukan kita untuk pertama kalinya.</p>
+                </div>
             </div>
-            
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-coffee"></i>
-                    <p>Selamat menikmati pagi</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-smile"></i>
-                    <p>Semoga harimu menyenangkan</p>
-                </div>
-                <div class="feature">
-                    <i class="fas fa-heart"></i>
-                    <p>Aku mencintaimu</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Kencan Pertama</h3>
+                    <p class="timeline-date">1 September 2025</p>
+                    <p>Hari ketika kita menghabiskan waktu berdua untuk pertama kalinya.</p>
                 </div>
             </div>
-            
-            <button class="cta-button" onclick="showSpecialMessage()">
-                <i class="fas fa-gift"></i> Pesan Spesial
-            </button>
-            
-            <div id="special-message" style="display: none; background: #fff8f8; padding: 15px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #ff6b6b;">
-                <p>Setiap hari bersamamu adalah anugerah. Terima kasih telah menjadi bagian terindah dalam hidupku. Aku sayang kamu!</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Hari Lahir Kita</h3>
+                    <p class="timeline-date">21 April 2005 &amp; 24 Maret 2006</p>
+                    <p>Hari spesial yang selalu kita rayakan bersama.</p>
+                </div>
             </div>
         </div>
-        
-        <div class="footer">
-            <p>Dibuat dengan <span class="heart">❤</span> untukmu | Pagi ini dan selamanya</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Our <span>Memories</span></h2>
+        <div class="gallery-container">
+    <div class="gallery-item">
+        <img src="foto1.jpg" alt="Foto kebersamaan Ochi dan Chepi" class="gallery-image">
+        <div class="gallery-overlay">
+            <p>Aku</p>
+        </div>
+    </div>
+    <div class="gallery-item">
+        <img src="foto2.jpg" alt="Momen spesial Ochi dan Chepi" class="gallery-image">
+        <div class="gallery-overlay">
+            <p>Kamu</p>
         </div>
     </div>
 
-    <script>
-        function showSpecialMessage() {
-            const message = document.getElementById('special-message');
-            message.style.display = 'block';
-            
-            // Tambahkan efek konfeti sederhana
-            const buttons = document.querySelectorAll('.cta-button');
-            buttons.forEach(button => {
-                button.innerHTML = '<i class="fas fa-gift"></i> Terima Kasih Sayang!';
-                button.style.background = 'linear-gradient(120deg, #4facfe 0%, #00f2fe 100%)';
-            });
-        }
-    </script>
+</div>
+    </section>
+
+    <!-- Messages Section -->
+    <section id="messages" class="messages">
+        <h2>Love <span>Messages</span></h2>
+        <div class="message-container">
+            <div class="message-card">
+                <div class="message-header">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="message-text">Terima kasih sudah hadir dalam hidupku dan membuat setiap hari terasa berarti.</p>
+                <div class="message-footer">
+                    <p>Untukmu</p>
+                </div>
+            </div>
+            <div class="message-card">
+                <div class="message-header">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="message-text">Jarak takkan pernah mengurangi rasa cintaku padamu. Kita selalu terhubung dalam hati.</p>
+                <div class="message-footer">
+                    <p>Untukmu</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="countdown">
+            <h3>I Love You 🤍🤍🤍</h3>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span id="days">0</span>
+                    <p>Hari</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">0</span>
+                    <p>Jam</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">0</span>
+                    <p>Menit</p>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds">0</span>
+                    <p>Detik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tambahan Section Harapan & Doa -->
+    <section id="hope" class="hope">
+        <h2>Harapan &amp; <span>Doa</span></h2>
+        <div style="max-width:700px;margin:0 auto;text-align:center;">
+            <p style="font-size:1.2rem;line-height:2;color:#ff6b6b;">
+                Semoga cinta kita selalu tumbuh dan menguat, melewati segala rintangan dan waktu.<br>
+                Aku berdoa agar kebahagiaan selalu menyertai langkah kita bersama.<br>
+                Bersama kamu, aku ingin menulis kisah indah sampai akhir hayat.
+            </p>
+            <p style="margin-top:2rem;color:#333;">
+                "Aku berjanji akan selalu menjaga, mencintai, dan membahagiakanmu. Selamanya."
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Dibuat dengan <i class="fas fa-heart"></i> dan penuh cinta, untukmu yang selalu di hati.<br>
+            Selalu bersamamu, dalam suka dan duka. <br>
+            <span style="color:#ff6b6b;">Kamu adalah alasan aku tersenyum setiap hari.</span>
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
